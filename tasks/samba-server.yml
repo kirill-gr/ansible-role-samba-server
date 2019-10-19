@@ -1,0 +1,15 @@
+---
+
+- name: Install Samba
+  apt:
+    name: samba
+  become: yes
+- name: Set workgroup
+  lineinfile:
+    path: /etc/samba/smb.conf
+    regexp: '^\s*workgroup ='
+    line: workgroup = {{ smb_workgroup }}
+  when: workgroup is defined
+  become: yes
+  notify:
+    - Restart Samba service
