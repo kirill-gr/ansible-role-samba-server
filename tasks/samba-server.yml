@@ -9,7 +9,7 @@
     path: /etc/samba/smb.conf
     regexp: '^\s*workgroup ='
     line: workgroup = {{ smb_workgroup }}
-  when: workgroup is defined
+  when: smb_workgroup is defined
   become: yes
   notify:
     - Restart Samba service
