@@ -1,5 +1,4 @@
 ---
 
 - name: Install Samba server
-  include: samba-server.yml
-  tags: samba-server
+  import_tasks: samba-server.yml

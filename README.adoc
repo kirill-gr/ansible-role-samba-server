@@ -1,8 +1,9 @@
-= Install Samba server Ansible role
+= Ansible role: Install Samba server
 
 Designed for Ubuntu, tested on all versions from 18.04 to 19.10
 
-Variables:
+== Variables
 `smb_workgroup` - override default workgroup
 
-After installation: `sudo smbpasswd -a <some_password>`
+== After installation
+`sudo smbpasswd -a <some_password>`
